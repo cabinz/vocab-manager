@@ -1,4 +1,4 @@
-![poster](https://cabinz.github.io/vocab-manager/images/post.png)
+![poster](https://cabinz.github.io/vocab-manager-site/images/post.png)
 
 # What is Vocab Manager
 
