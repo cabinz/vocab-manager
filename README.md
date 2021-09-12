@@ -1,4 +1,5 @@
-![poster](https://cabinz.github.io/vocab-manager-site/images/post.png)
+![post](https://user-images.githubusercontent.com/60537086/132992451-9b23ea54-d9be-4204-a63b-b103796eb2cb.png)
+
 
 # What is Vocab Manager
 
@@ -24,5 +25,5 @@ In the future, I’m about to improve the user interface by rebuilding the GUI c
 
 ## v1.x
 
-Version: [1.0.0](https://cabinz.github.io/vocab-manager/v1_intro.html).
+Version: [1.0.0](https://github.com/cabinz/vocab-manager/releases/tag/v1.0.0).
 
