@@ -1,3 +1,5 @@
+![poster](https://cabinz.github.io/vocab-manager/images/post.png)
+
 # What is Vocab Manager
 
 Vocab Manager is an open-source project developing a Windows desktop notebook software. It enables users to freely customize their own vocabulary and do self-testing on it.
