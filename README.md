@@ -6,7 +6,7 @@ Vocab Manager is an open-source project developing a Windows desktop notebook so
 
 The product is suitable for foreign language learners who are used to remember vocabulary through context, example, definition, some extra notes and usually do foreign language reading on computer. It aims to provide users a clean and regular pattern of remembering and reviewing words and phrases.
 
-The user manual and installers of all versions are available on [official website](https://cabinz.github.io/vocab-manager/index.html) of Vocab Manager. 
+The user manual and installers of all versions are available on [official website](https://cabinz.github.io/vocab-manager-site/index.html) of Vocab Manager. 
 
 
 
