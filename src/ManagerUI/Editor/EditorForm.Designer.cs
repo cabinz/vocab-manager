@@ -79,6 +79,8 @@
             this.tsmiMDExport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRecycleBin = new System.Windows.Forms.ToolStripMenuItem();
             this.tips = new System.Windows.Forms.ToolTip(this.components);
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splWordEditor)).BeginInit();
             this.splWordEditor.Panel1.SuspendLayout();
             this.splWordEditor.Panel2.SuspendLayout();
@@ -131,6 +133,7 @@
             this.txtContext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtContext.Size = new System.Drawing.Size(430, 193);
             this.txtContext.TabIndex = 3;
+            this.txtContext.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContext_KeyDown);
             // 
             // btnRemoveWord
             // 
@@ -177,6 +180,7 @@
             this.txtWordText.Name = "txtWordText";
             this.txtWordText.Size = new System.Drawing.Size(442, 38);
             this.txtWordText.TabIndex = 12;
+            this.txtWordText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtWordText_KeyDown);
             // 
             // txtNote
             // 
@@ -199,6 +203,7 @@
             this.txtDefinition.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDefinition.Size = new System.Drawing.Size(436, 242);
             this.txtDefinition.TabIndex = 14;
+            this.txtDefinition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDefinition_KeyDown);
             // 
             // lstSelectedTags
             // 
@@ -670,7 +675,8 @@
             this.mnsTop.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
-            this.tsmiRecycleBin});
+            this.tsmiRecycleBin,
+            this.otherToolStripMenuItem});
             this.mnsTop.Location = new System.Drawing.Point(0, 0);
             this.mnsTop.Name = "mnsTop";
             this.mnsTop.Size = new System.Drawing.Size(1151, 28);
@@ -713,6 +719,21 @@
             this.tips.AutoPopDelay = 5000;
             this.tips.InitialDelay = 50;
             this.tips.ReshowDelay = 10;
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoFillToolStripMenuItem});
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.otherToolStripMenuItem.Text = "Other";
+            // 
+            // autoFillToolStripMenuItem
+            // 
+            this.autoFillToolStripMenuItem.Name = "autoFillToolStripMenuItem";
+            this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.autoFillToolStripMenuItem.Text = "Auto Fill (Ctrl + Shift + F)";
+            this.autoFillToolStripMenuItem.Click += new System.EventHandler(this.autoFillToolStripMenuItem_Click);
             // 
             // EditorForm
             // 
@@ -821,5 +842,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiRecycleBin;
         private System.Windows.Forms.ToolTip tips;
         private System.Windows.Forms.Label lblNumFiltered;
+        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoFillToolStripMenuItem;
     }
 }

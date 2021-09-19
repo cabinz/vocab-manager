@@ -1,4 +1,5 @@
 ﻿using ManagerLibrary;
+using ManagerLibrary.AutoFiller;
 using ManagerLibrary.Export;
 using ManagerLibrary.Models;
 using System;
@@ -30,6 +31,11 @@ namespace ManagerUI
         /// Stores the selected tags for lstSelectedTags.
         /// </summary>
         List<TagModel> SelectedTags = new List<TagModel>();
+
+        /// <summary>
+        /// The auto-filler for current word (of spelling in the txtWordText)
+        /// </summary>
+        public IAutoFiller AutoFiller { get; set; }
 
         /// <summary>
         /// Constructor of the VocabEditorForm.
@@ -202,6 +208,25 @@ namespace ManagerUI
         /// </summary>
         private void CreateWord()
         {
+            //LongmanDict dict = new LongmanDict();
+            //if (String.IsNullOrEmpty(txtDefinition.Text.Trim()))
+            //{
+            //    dict = new LongmanDict(txtWordText.Text);
+            //    txtDefinition.Text = dict.DefinitionText();
+            //}
+            //if(String.IsNullOrEmpty(txtContext.Text.Trim()))
+            //{
+            //    if (String.IsNullOrEmpty(dict.FullLink))
+            //    {
+            //        dict = new LongmanDict(txtWordText.Text);
+            //    }
+            //    txtContext.Text = dict.ContextText();
+            //    if (!String.IsNullOrEmpty(txtContext.Text))
+            //    {
+            //        txtContextSource.Text = dict.FullLink;
+            //    }
+            //}
+
             if (tabVocabEditor.SelectedTab == tbpWordEditor && ValidateFormForCreateWord())
             {
                 WordModel mdl = new WordModel(
@@ -739,6 +764,110 @@ namespace ManagerUI
                     lstWords.SetSelected(0, true);
                 }
                 lstWords.Focus();
+            }
+        }
+
+        private void txtDefinition_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Auto Fill with Web Crawler
+            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            {
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                {
+                    AutoAppendDefinition();
+                }
+                else
+                {
+                    MessageBox.Show("No available network connection!");
+                }
+            }
+        }
+
+        private void autoFillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AutoFill();
+        }
+
+        private void AutoFill()
+        {
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                if (String.IsNullOrEmpty(txtDefinition.Text.Trim()))
+                {
+                    AutoAppendDefinition();
+                }
+                if (String.IsNullOrEmpty(txtContext.Text.Trim()))
+                {
+                    AutoAppendContext();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No available network connection!");
+            }
+        }
+
+        private void AutoAppendDefinition()
+        {
+            RefreshAutoFiller();
+            string content = AutoFiller.DefinitionText();
+
+            if (!String.IsNullOrEmpty(content))
+            {
+                txtDefinition.Text += content;
+            }
+            else
+            {
+                MessageBox.Show($"Find no definition from {AutoFiller.SourceText()}");
+            }
+        }
+
+        private void AutoAppendContext()
+        {
+            RefreshAutoFiller();
+            string content = AutoFiller.ContextText();
+
+            if (!String.IsNullOrEmpty(content))
+            {
+                txtContext.Text += content;
+                txtContextSource.Text += AutoFiller.SourceText();
+            }
+            else
+            {
+                MessageBox.Show($"Find no example from {AutoFiller.SourceText()}");
+            }
+        }
+
+        private void txtContext_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            {
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                {
+                    var dict = new LongmanFiller(txtWordText.Text);
+                    AutoAppendDefinition();
+                    AutoAppendContext();
+                }
+                else
+                {
+                    MessageBox.Show("No available network connection!");
+                }
+            }
+        }
+
+        private void txtWordText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            {
+                AutoFill();
+            }
+        }
+
+        private void RefreshAutoFiller()
+        {
+            if (AutoFiller == null || AutoFiller.Spelling() != txtWordText.Text)
+            {
+                AutoFiller = new LongmanFiller(txtWordText.Text);
             }
         }
     }
