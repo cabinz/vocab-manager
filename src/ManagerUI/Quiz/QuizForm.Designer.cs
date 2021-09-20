@@ -236,14 +236,14 @@
             // loadAllToolStripMenuItem
             // 
             this.loadAllToolStripMenuItem.Name = "loadAllToolStripMenuItem";
-            this.loadAllToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.loadAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loadAllToolStripMenuItem.Text = "load all";
             this.loadAllToolStripMenuItem.Click += new System.EventHandler(this.loadAllToolStripMenuItem_Click);
             // 
             // loadByTagsToolStripMenuItem
             // 
             this.loadByTagsToolStripMenuItem.Name = "loadByTagsToolStripMenuItem";
-            this.loadByTagsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.loadByTagsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loadByTagsToolStripMenuItem.Text = "load by tags";
             this.loadByTagsToolStripMenuItem.Click += new System.EventHandler(this.loadByTagsToolStripMenuItem_Click);
             // 
@@ -264,6 +264,7 @@
             // 
             // tlpMetricBar
             // 
+            this.tlpMetricBar.BackColor = System.Drawing.SystemColors.Window;
             this.tlpMetricBar.ColumnCount = 2;
             this.tlpQuizForm.SetColumnSpan(this.tlpMetricBar, 2);
             this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.25632F));
@@ -286,11 +287,11 @@
             this.lblMetricInfo.Name = "lblMetricInfo";
             this.lblMetricInfo.Size = new System.Drawing.Size(1017, 40);
             this.lblMetricInfo.TabIndex = 0;
-            this.lblMetricInfo.Text = "label1";
             // 
             // btnRemove
             // 
             this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemove.Enabled = false;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnRemove.Location = new System.Drawing.Point(1026, 3);
             this.btnRemove.Name = "btnRemove";

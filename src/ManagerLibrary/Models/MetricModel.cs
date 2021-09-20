@@ -53,5 +53,13 @@ namespace ManagerLibrary.Models
                 return this.OverallAcc.CompareTo(other.OverallAcc);
             }
         }
+
+        public override string ToString()
+        {
+            string ret = String.Format(
+                "Accuracy (Overall): {0:P2} | Accuary (Last 3 Tests): {1:P2}", 
+                OverallAcc, CurrentAcc);
+            return ret;
+        }
     }
 }

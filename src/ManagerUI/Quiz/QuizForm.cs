@@ -80,11 +80,6 @@ namespace ManagerUI
             Quiz.Sort();
         }
 
-        private void FreezeButtons()
-        {
-
-        }
-
         /// <summary>
         /// Increment the CurPos if there is more words, and display the 
         /// next one on the board.
@@ -92,15 +87,26 @@ namespace ManagerUI
         /// </summary>
         private void DisplayNext()
         {
+            // Reset info labels.
+            lblMetricInfo.Text = "";
+            txtNote.Text = "";
+            txtContext.Text = "";
+            txtDefinition.Text = "";
+            // Display the scroll bar of info textboxes.
+            txtDefinition.ScrollBars = ScrollBars.None;
+            txtContext.ScrollBars = ScrollBars.None;
+            txtNote.ScrollBars = ScrollBars.None;
+
             if (++CurPos < Quiz.Count)
             {
                 CurWord = GlobalConfig.Connection.GetWordById(Quiz[CurPos].WordID);
                 lblWordText.Text = CurWord.WordText;
+                lblMetricInfo.Text = Quiz[CurPos].ToString();
             }
             else
             {
                 lblWordText.Text = "No more records";
-                
+                FreezeButtons();
             }
         }
 
@@ -131,43 +137,41 @@ namespace ManagerUI
                 {
                     InForgetMode = true;
                     // Send record.
-                    GlobalConfig.Connection.CreateRecord(new RecordModel(
-                    Quiz[CurPos].WordID, false));
-                    // Show related info abt the word.
-                    txtDefinition.Text = CurWord.Definition;
-                    txtContext.Text = CurWord.Context;
-                    txtContext.Text +=
-                        (CurWord.ContextSource != "") ?
-                        $"{Environment.NewLine}----------{Environment.NewLine}SOURCE: {CurWord.ContextSource}" : "";
-                    txtNote.Text = CurWord.Note;
+                    GlobalConfig.Connection.CreateRecord(
+                        new RecordModel(Quiz[CurPos].WordID, false));
+                    // Show word details on tplDetailBoard.
+                    ShowWordDetails();
                     // Set button to "Next". Disable "Remember".
                     btnForget.Text = "Next";
                     btnRemember.Enabled = false;
-                    // Display the scroll bar of info textboxes.
-                    txtDefinition.ScrollBars = ScrollBars.Vertical;
-                    txtContext.ScrollBars = ScrollBars.Vertical;
-                    txtNote.ScrollBars = ScrollBars.Vertical;
                     // Add the word to ForgetWords.
                     ForgetWords.Add(CurWord);
                 }
                 else
                 {
                     InForgetMode = false;
-                    // Reset info labels.
-                    txtNote.Text = "";
-                    txtContext.Text = "";
-                    txtDefinition.Text = "";
                     // Reset the buttons.
                     btnForget.Text = "Forget";
                     btnRemember.Enabled = true;
-                    // Display the scroll bar of info textboxes.
-                    txtDefinition.ScrollBars = ScrollBars.None;
-                    txtContext.ScrollBars = ScrollBars.None;
-                    txtNote.ScrollBars = ScrollBars.None;
                     // Display next word.
                     DisplayNext();
                 }
             }
+        }
+
+        private void ShowWordDetails()
+        {
+            // Show related info abt the word.
+            txtDefinition.Text = CurWord.Definition;
+            txtContext.Text = CurWord.Context;
+            txtContext.Text +=
+                (CurWord.ContextSource != "") ?
+                $"{Environment.NewLine}----------{Environment.NewLine}SOURCE: {CurWord.ContextSource}" : "";
+            txtNote.Text = CurWord.Note;
+            // Display the scroll bar of info textboxes.
+            txtDefinition.ScrollBars = ScrollBars.Vertical;
+            txtContext.ScrollBars = ScrollBars.Vertical;
+            txtNote.ScrollBars = ScrollBars.Vertical;
         }
 
         private void generateReportToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,17 +213,34 @@ namespace ManagerUI
 
         private void ActivateBoard()
         {
-            btnForget.Enabled = true;
-            btnRemember.Enabled = true;
+            ActivateButtons();
             lblWordText.Text = "Click any button to start.";
             txtContext.Text = "";
             txtDefinition.Text = "";
             txtNote.Text = "";
         }
 
+        private void FreezeButtons()
+        {
+            btnForget.Enabled = btnRemember.Enabled = btnRemove.Enabled = false;
+        }
+
+        private void ActivateButtons()
+        {
+            btnForget.Enabled = btnRemember.Enabled = btnRemove.Enabled = true;
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            
+            GlobalConfig.Connection.RemoveWordById(Quiz[CurPos].WordID);
+            if (InForgetMode)
+            {
+                InForgetMode = false;
+                // Reset the buttons.
+                btnForget.Text = "Forget";
+                btnRemember.Enabled = true;
+            }
+            DisplayNext();
         }
     }
 }
