@@ -78,9 +78,10 @@
             this.tsmiExport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMDExport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRecycleBin = new System.Windows.Forms.ToolStripMenuItem();
-            this.tips = new System.Windows.Forms.ToolTip(this.components);
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoFillAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tips = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splWordEditor)).BeginInit();
             this.splWordEditor.Panel1.SuspendLayout();
             this.splWordEditor.Panel2.SuspendLayout();
@@ -713,17 +714,11 @@
             this.tsmiRecycleBin.Text = "Recycle Bin";
             this.tsmiRecycleBin.Click += new System.EventHandler(this.recycleBinToolStripMenuItem_Click);
             // 
-            // tips
-            // 
-            this.tips.AutomaticDelay = 50;
-            this.tips.AutoPopDelay = 5000;
-            this.tips.InitialDelay = 50;
-            this.tips.ReshowDelay = 10;
-            // 
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoFillToolStripMenuItem});
+            this.autoFillToolStripMenuItem,
+            this.autoFillAllToolStripMenuItem});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.otherToolStripMenuItem.Text = "Other";
@@ -734,6 +729,20 @@
             this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
             this.autoFillToolStripMenuItem.Text = "Auto Fill (Ctrl + Shift + F)";
             this.autoFillToolStripMenuItem.Click += new System.EventHandler(this.autoFillToolStripMenuItem_Click);
+            // 
+            // autoFillAllToolStripMenuItem
+            // 
+            this.autoFillAllToolStripMenuItem.Name = "autoFillAllToolStripMenuItem";
+            this.autoFillAllToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.autoFillAllToolStripMenuItem.Text = "Auto Fill All";
+            this.autoFillAllToolStripMenuItem.Click += new System.EventHandler(this.autoFillAllToolStripMenuItem_Click);
+            // 
+            // tips
+            // 
+            this.tips.AutomaticDelay = 50;
+            this.tips.AutoPopDelay = 5000;
+            this.tips.InitialDelay = 50;
+            this.tips.ReshowDelay = 10;
             // 
             // EditorForm
             // 
@@ -844,5 +853,6 @@
         private System.Windows.Forms.Label lblNumFiltered;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoFillAllToolStripMenuItem;
     }
 }

@@ -38,6 +38,11 @@ namespace ManagerUI
         public IAutoFiller AutoFiller { get; set; }
 
         /// <summary>
+        /// The global flag for stopping auto filling all.
+        /// </summary>
+        bool StopAutoFillAll { get; set; } = true;
+
+        /// <summary>
         /// Constructor of the VocabEditorForm.
         /// </summary>
         public EditorForm()
@@ -727,31 +732,35 @@ namespace ManagerUI
 
         private void EditorForm_KeyDown(object sender, KeyEventArgs e)
         {
-                switch(tabVocabEditor.SelectedIndex)
-                {
-                    // case Word Editor
-                    case 0:
-                        if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
-                        {
-                            CreateWord();
-                        }
-                        else if (e.KeyData == (Keys.Control | Keys.S))
-                        {
-                            UpdateWord();
-                        }
-                        break;
-                    // case Tag Editor
-                    case 1:
-                        if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
-                        {
-                            CreateTag();
-                        }
-                        else if (e.KeyData == (Keys.Control | Keys.S))
-                        {
-                            UpdateTag();
-                        }
+            switch(tabVocabEditor.SelectedIndex)
+            {
+                // case Word Editor
+                case 0:
+                    if(!StopAutoFillAll && e.KeyData == Keys.Space)
+                    {
+                        StopAutoFillAll = true;
+                    }
+                    else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
+                    {
+                        CreateWord();
+                    }
+                    else if (e.KeyData == (Keys.Control | Keys.S))
+                    {
+                        UpdateWord();
+                    }
                     break;
-                }
+                // case Tag Editor
+                case 1:
+                    if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
+                    {
+                        CreateTag();
+                    }
+                    else if (e.KeyData == (Keys.Control | Keys.S))
+                    {
+                        UpdateTag();
+                    }
+                break;
+            }
             
         }
 
@@ -772,13 +781,9 @@ namespace ManagerUI
             // Auto Fill with Web Crawler
             if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
             {
-                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                if (ValidateInternetConnection())
                 {
                     AutoAppendDefinition();
-                }
-                else
-                {
-                    MessageBox.Show("No available network connection!");
                 }
             }
         }
@@ -788,69 +793,76 @@ namespace ManagerUI
             AutoFill();
         }
 
-        private void AutoFill()
+        private bool AutoFill(bool errPrompt=true)
         {
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            bool doFill = false;
+
+            if (ValidateInternetConnection())
             {
                 if (String.IsNullOrEmpty(txtDefinition.Text.Trim()))
                 {
-                    AutoAppendDefinition();
+                    doFill = AutoAppendDefinition(errPrompt);
                 }
                 if (String.IsNullOrEmpty(txtContext.Text.Trim()))
                 {
-                    AutoAppendContext();
+                    doFill = AutoAppendContext(errPrompt);
                 }
             }
-            else
-            {
-                MessageBox.Show("No available network connection!");
-            }
+
+            return doFill;
         }
 
-        private void AutoAppendDefinition()
+        private bool AutoAppendDefinition(bool errPrompt=true)
         {
             RefreshAutoFiller();
             string content = AutoFiller.DefinitionText();
+            bool doFill = !String.IsNullOrEmpty(content);
 
-            if (!String.IsNullOrEmpty(content))
+            if (doFill)
             {
                 txtDefinition.Text += content;
             }
             else
             {
-                MessageBox.Show($"Find no definition from {AutoFiller.SourceText()}");
+                if (errPrompt)
+                {
+                    MessageBox.Show($"Find no definition from {AutoFiller.SourceText()}");
+                }
             }
+
+            return doFill;
         }
 
-        private void AutoAppendContext()
+        private bool AutoAppendContext(bool errPrompt=true)
         {
             RefreshAutoFiller();
             string content = AutoFiller.ContextText();
+            bool doFill = !String.IsNullOrEmpty(content);
 
-            if (!String.IsNullOrEmpty(content))
+            if (doFill)
             {
                 txtContext.Text += content;
                 txtContextSource.Text += AutoFiller.SourceText();
             }
             else
             {
-                MessageBox.Show($"Find no example from {AutoFiller.SourceText()}");
+                if (errPrompt)
+                {
+                    MessageBox.Show($"Find no example from {AutoFiller.SourceText()}");
+                }
             }
+
+            return doFill;
         }
 
         private void txtContext_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
             {
-                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                if (ValidateInternetConnection())
                 {
-                    var dict = new LongmanFiller(txtWordText.Text);
-                    AutoAppendDefinition();
+                    RefreshAutoFiller();
                     AutoAppendContext();
-                }
-                else
-                {
-                    MessageBox.Show("No available network connection!");
                 }
             }
         }
@@ -870,5 +882,48 @@ namespace ManagerUI
                 AutoFiller = new LongmanFiller(txtWordText.Text);
             }
         }
+
+        private void autoFillAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ValidateInternetConnection())
+            {
+                MessageBox.Show("Get started to auto-fill all your records. Press SPACE to stop filling.");
+                StopAutoFillAll = false;
+                int cnt = 0;
+
+                for (int i = 0; i < lstWords.Items.Count; i++)
+                {
+                    lstWords.SetSelected(i, true);
+                    if(AutoFill(errPrompt: false))
+                    { 
+                        UpdateWord();
+                        cnt++;
+                    }
+
+                    Application.DoEvents();
+                    if (StopAutoFillAll)
+                    {
+                        break;
+                    }
+                }
+
+                StopAutoFillAll = true;
+                MessageBox.Show($"Finished filling {cnt} records.");
+            }
+        }
+
+        private bool ValidateInternetConnection()
+        {
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("No available network connection!");
+                return false;
+            }
+        }
+
     }
 }
