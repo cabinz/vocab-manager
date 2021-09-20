@@ -31,8 +31,8 @@
             this.lblWordText = new System.Windows.Forms.Label();
             this.btnRemember = new System.Windows.Forms.Button();
             this.btnForget = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpQuizForm = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpDetailBoard = new System.Windows.Forms.TableLayoutPanel();
             this.grpNote = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.grpContext = new System.Windows.Forms.GroupBox();
@@ -45,21 +45,25 @@
             this.loadByTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGenReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tlpMetricBar = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMetricInfo = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.tlpQuizForm.SuspendLayout();
+            this.tlpDetailBoard.SuspendLayout();
             this.grpNote.SuspendLayout();
             this.grpContext.SuspendLayout();
             this.grpDefinition.SuspendLayout();
             this.mnsTop.SuspendLayout();
+            this.tlpMetricBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWordText
             // 
             this.lblWordText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWordText.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblWordText, 2);
+            this.tlpQuizForm.SetColumnSpan(this.lblWordText, 2);
             this.lblWordText.Font = new System.Drawing.Font("Sitka Display", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWordText.Location = new System.Drawing.Point(352, 5);
+            this.lblWordText.Location = new System.Drawing.Point(352, 10);
             this.lblWordText.Name = "lblWordText";
             this.lblWordText.Size = new System.Drawing.Size(488, 62);
             this.lblWordText.TabIndex = 1;
@@ -70,9 +74,9 @@
             // 
             this.btnRemember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemember.Enabled = false;
-            this.btnRemember.Location = new System.Drawing.Point(3, 368);
+            this.btnRemember.Location = new System.Drawing.Point(3, 483);
             this.btnRemember.Name = "btnRemember";
-            this.btnRemember.Size = new System.Drawing.Size(590, 116);
+            this.btnRemember.Size = new System.Drawing.Size(590, 101);
             this.btnRemember.TabIndex = 3;
             this.btnRemember.Text = "Remember";
             this.btnRemember.UseVisualStyleBackColor = true;
@@ -82,50 +86,52 @@
             // 
             this.btnForget.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnForget.Enabled = false;
-            this.btnForget.Location = new System.Drawing.Point(599, 368);
+            this.btnForget.Location = new System.Drawing.Point(599, 483);
             this.btnForget.Name = "btnForget";
-            this.btnForget.Size = new System.Drawing.Size(590, 116);
+            this.btnForget.Size = new System.Drawing.Size(590, 101);
             this.btnForget.TabIndex = 4;
             this.btnForget.Text = "Forget";
             this.btnForget.UseVisualStyleBackColor = true;
             this.btnForget.Click += new System.EventHandler(this.btnForget_Click);
             // 
-            // tableLayoutPanel1
+            // tlpQuizForm
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.lblWordText, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnRemember, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnForget, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1192, 487);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tlpQuizForm.ColumnCount = 2;
+            this.tlpQuizForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpQuizForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpQuizForm.Controls.Add(this.lblWordText, 0, 0);
+            this.tlpQuizForm.Controls.Add(this.btnRemember, 0, 3);
+            this.tlpQuizForm.Controls.Add(this.btnForget, 1, 3);
+            this.tlpQuizForm.Controls.Add(this.tlpDetailBoard, 0, 2);
+            this.tlpQuizForm.Controls.Add(this.tlpMetricBar, 0, 1);
+            this.tlpQuizForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpQuizForm.Location = new System.Drawing.Point(0, 28);
+            this.tlpQuizForm.Name = "tlpQuizForm";
+            this.tlpQuizForm.RowCount = 4;
+            this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tlpQuizForm.Size = new System.Drawing.Size(1192, 587);
+            this.tlpQuizForm.TabIndex = 5;
             // 
-            // tableLayoutPanel2
+            // tlpDetailBoard
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 2);
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel2.Controls.Add(this.grpNote, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.grpContext, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.grpDefinition, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 76);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1186, 286);
-            this.tableLayoutPanel2.TabIndex = 5;
+            this.tlpDetailBoard.ColumnCount = 3;
+            this.tlpQuizForm.SetColumnSpan(this.tlpDetailBoard, 2);
+            this.tlpDetailBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpDetailBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tlpDetailBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpDetailBoard.Controls.Add(this.grpNote, 2, 0);
+            this.tlpDetailBoard.Controls.Add(this.grpContext, 1, 0);
+            this.tlpDetailBoard.Controls.Add(this.grpDefinition, 0, 0);
+            this.tlpDetailBoard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpDetailBoard.Location = new System.Drawing.Point(3, 131);
+            this.tlpDetailBoard.Name = "tlpDetailBoard";
+            this.tlpDetailBoard.RowCount = 1;
+            this.tlpDetailBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpDetailBoard.Size = new System.Drawing.Size(1186, 346);
+            this.tlpDetailBoard.TabIndex = 5;
             // 
             // grpNote
             // 
@@ -135,7 +141,7 @@
             this.grpNote.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpNote.Location = new System.Drawing.Point(797, 3);
             this.grpNote.Name = "grpNote";
-            this.grpNote.Size = new System.Drawing.Size(386, 280);
+            this.grpNote.Size = new System.Drawing.Size(386, 340);
             this.grpNote.TabIndex = 2;
             this.grpNote.TabStop = false;
             this.grpNote.Text = "Note";
@@ -150,7 +156,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.ReadOnly = true;
-            this.txtNote.Size = new System.Drawing.Size(380, 238);
+            this.txtNote.Size = new System.Drawing.Size(380, 298);
             this.txtNote.TabIndex = 1;
             // 
             // grpContext
@@ -161,7 +167,7 @@
             this.grpContext.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpContext.Location = new System.Drawing.Point(394, 3);
             this.grpContext.Name = "grpContext";
-            this.grpContext.Size = new System.Drawing.Size(397, 280);
+            this.grpContext.Size = new System.Drawing.Size(397, 340);
             this.grpContext.TabIndex = 1;
             this.grpContext.TabStop = false;
             this.grpContext.Text = "Context";
@@ -176,7 +182,7 @@
             this.txtContext.Multiline = true;
             this.txtContext.Name = "txtContext";
             this.txtContext.ReadOnly = true;
-            this.txtContext.Size = new System.Drawing.Size(391, 238);
+            this.txtContext.Size = new System.Drawing.Size(391, 298);
             this.txtContext.TabIndex = 1;
             // 
             // grpDefinition
@@ -187,7 +193,7 @@
             this.grpDefinition.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpDefinition.Location = new System.Drawing.Point(3, 3);
             this.grpDefinition.Name = "grpDefinition";
-            this.grpDefinition.Size = new System.Drawing.Size(385, 280);
+            this.grpDefinition.Size = new System.Drawing.Size(385, 340);
             this.grpDefinition.TabIndex = 0;
             this.grpDefinition.TabStop = false;
             this.grpDefinition.Text = "Definition";
@@ -203,7 +209,7 @@
             this.txtDefinition.Multiline = true;
             this.txtDefinition.Name = "txtDefinition";
             this.txtDefinition.ReadOnly = true;
-            this.txtDefinition.Size = new System.Drawing.Size(379, 238);
+            this.txtDefinition.Size = new System.Drawing.Size(379, 298);
             this.txtDefinition.TabIndex = 0;
             // 
             // mnsTop
@@ -256,13 +262,51 @@
             this.tsmiGenReport.Text = "generate report (.md)";
             this.tsmiGenReport.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
+            // tlpMetricBar
+            // 
+            this.tlpMetricBar.ColumnCount = 2;
+            this.tlpQuizForm.SetColumnSpan(this.tlpMetricBar, 2);
+            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.25632F));
+            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.74368F));
+            this.tlpMetricBar.Controls.Add(this.lblMetricInfo, 0, 0);
+            this.tlpMetricBar.Controls.Add(this.btnRemove, 1, 0);
+            this.tlpMetricBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMetricBar.Location = new System.Drawing.Point(3, 85);
+            this.tlpMetricBar.Name = "tlpMetricBar";
+            this.tlpMetricBar.RowCount = 1;
+            this.tlpMetricBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMetricBar.Size = new System.Drawing.Size(1186, 40);
+            this.tlpMetricBar.TabIndex = 6;
+            // 
+            // lblMetricInfo
+            // 
+            this.lblMetricInfo.AutoSize = true;
+            this.lblMetricInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMetricInfo.Location = new System.Drawing.Point(3, 0);
+            this.lblMetricInfo.Name = "lblMetricInfo";
+            this.lblMetricInfo.Size = new System.Drawing.Size(1017, 40);
+            this.lblMetricInfo.TabIndex = 0;
+            this.lblMetricInfo.Text = "label1";
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btnRemove.Location = new System.Drawing.Point(1026, 3);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(157, 34);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // QuizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1192, 515);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1192, 615);
+            this.Controls.Add(this.tlpQuizForm);
             this.Controls.Add(this.mnsTop);
             this.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.mnsTop;
@@ -270,9 +314,9 @@
             this.Name = "QuizForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestingForm";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tlpQuizForm.ResumeLayout(false);
+            this.tlpQuizForm.PerformLayout();
+            this.tlpDetailBoard.ResumeLayout(false);
             this.grpNote.ResumeLayout(false);
             this.grpNote.PerformLayout();
             this.grpContext.ResumeLayout(false);
@@ -281,6 +325,8 @@
             this.grpDefinition.PerformLayout();
             this.mnsTop.ResumeLayout(false);
             this.mnsTop.PerformLayout();
+            this.tlpMetricBar.ResumeLayout(false);
+            this.tlpMetricBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,8 +336,8 @@
         private System.Windows.Forms.Label lblWordText;
         private System.Windows.Forms.Button btnRemember;
         private System.Windows.Forms.Button btnForget;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpQuizForm;
+        private System.Windows.Forms.TableLayoutPanel tlpDetailBoard;
         private System.Windows.Forms.GroupBox grpNote;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.GroupBox grpContext;
@@ -304,5 +350,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiGenReport;
         private System.Windows.Forms.ToolStripMenuItem loadAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadByTagsToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tlpMetricBar;
+        private System.Windows.Forms.Label lblMetricInfo;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

@@ -50,7 +50,7 @@ namespace ManagerUI
         private void LoadAllMetrics()
         {
             Quiz = GlobalConfig.Connection.GetAllMetrics();
-            Quiz.Sort((x, y) => x.CompareTo(y)); // Increasing order for accuracy.
+            Quiz.Sort(); // Increasing order for accuracy.
         }
 
         /// <summary>
@@ -76,6 +76,13 @@ namespace ManagerUI
                     }
                 }
             }
+
+            Quiz.Sort();
+        }
+
+        private void FreezeButtons()
+        {
+
         }
 
         /// <summary>
@@ -93,6 +100,7 @@ namespace ManagerUI
             else
             {
                 lblWordText.Text = "No more records";
+                
             }
         }
 
@@ -207,6 +215,11 @@ namespace ManagerUI
             txtContext.Text = "";
             txtDefinition.Text = "";
             txtNote.Text = "";
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
