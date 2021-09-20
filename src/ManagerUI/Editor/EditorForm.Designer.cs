@@ -120,7 +120,7 @@
             this.lstWords.ItemHeight = 31;
             this.lstWords.Location = new System.Drawing.Point(3, 61);
             this.lstWords.Name = "lstWords";
-            this.lstWords.Size = new System.Drawing.Size(217, 561);
+            this.lstWords.Size = new System.Drawing.Size(217, 559);
             this.lstWords.TabIndex = 0;
             this.lstWords.SelectedIndexChanged += new System.EventHandler(this.lstWords_SelectedIndexChanged);
             // 
@@ -140,7 +140,7 @@
             // 
             this.tlpWordList.SetColumnSpan(this.btnRemoveWord, 2);
             this.btnRemoveWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveWord.Location = new System.Drawing.Point(3, 628);
+            this.btnRemoveWord.Location = new System.Drawing.Point(3, 626);
             this.btnRemoveWord.Name = "btnRemoveWord";
             this.btnRemoveWord.Size = new System.Drawing.Size(217, 54);
             this.btnRemoveWord.TabIndex = 9;
@@ -154,10 +154,10 @@
             this.btnCreateWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCreateWord.Location = new System.Drawing.Point(3, 3);
             this.btnCreateWord.Name = "btnCreateWord";
-            this.btnCreateWord.Size = new System.Drawing.Size(287, 52);
+            this.btnCreateWord.Size = new System.Drawing.Size(287, 50);
             this.btnCreateWord.TabIndex = 10;
             this.btnCreateWord.Text = "Create";
-            this.tips.SetToolTip(this.btnCreateWord, "Create a new word. (Ctrl + Shift + Enter)");
+            this.tips.SetToolTip(this.btnCreateWord, "Create a new word. (Ctrl + Enter)");
             this.btnCreateWord.UseVisualStyleBackColor = true;
             this.btnCreateWord.Click += new System.EventHandler(this.btnCreateWord_Click);
             // 
@@ -166,10 +166,10 @@
             this.btnUpdateWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdateWord.Location = new System.Drawing.Point(598, 3);
             this.btnUpdateWord.Name = "btnUpdateWord";
-            this.btnUpdateWord.Size = new System.Drawing.Size(289, 52);
+            this.btnUpdateWord.Size = new System.Drawing.Size(289, 50);
             this.btnUpdateWord.TabIndex = 11;
             this.btnUpdateWord.Text = "Update";
-            this.tips.SetToolTip(this.btnUpdateWord, "Update the selected word. (Ctrl+S)");
+            this.tips.SetToolTip(this.btnUpdateWord, "Save update to the selected word. (Ctrl+S)");
             this.btnUpdateWord.UseVisualStyleBackColor = true;
             this.btnUpdateWord.Click += new System.EventHandler(this.btnUpdateWord_Click);
             // 
@@ -265,7 +265,7 @@
             // splWordEditor.Panel2
             // 
             this.splWordEditor.Panel2.Controls.Add(this.tlpWordEditorBoard);
-            this.splWordEditor.Size = new System.Drawing.Size(1137, 689);
+            this.splWordEditor.Size = new System.Drawing.Size(1137, 687);
             this.splWordEditor.SplitterDistance = 227;
             this.splWordEditor.SplitterWidth = 10;
             this.splWordEditor.TabIndex = 20;
@@ -288,7 +288,7 @@
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.857143F));
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.79047F));
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.561905F));
-            this.tlpWordList.Size = new System.Drawing.Size(223, 685);
+            this.tlpWordList.Size = new System.Drawing.Size(223, 683);
             this.tlpWordList.TabIndex = 10;
             // 
             // txtWordFilter
@@ -344,7 +344,7 @@
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.46178F));
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.46178F));
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.991908F));
-            this.tlpWordEditorBoard.Size = new System.Drawing.Size(896, 685);
+            this.tlpWordEditorBoard.Size = new System.Drawing.Size(896, 683);
             this.tlpWordEditorBoard.TabIndex = 21;
             // 
             // grpNotes
@@ -438,7 +438,7 @@
             this.tlpWordCommitButtoms.Name = "tlpWordCommitButtoms";
             this.tlpWordCommitButtoms.RowCount = 1;
             this.tlpWordCommitButtoms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpWordCommitButtoms.Size = new System.Drawing.Size(890, 58);
+            this.tlpWordCommitButtoms.Size = new System.Drawing.Size(890, 56);
             this.tlpWordCommitButtoms.TabIndex = 3;
             // 
             // btnClearWordEditor
@@ -446,7 +446,7 @@
             this.btnClearWordEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClearWordEditor.Location = new System.Drawing.Point(296, 3);
             this.btnClearWordEditor.Name = "btnClearWordEditor";
-            this.btnClearWordEditor.Size = new System.Drawing.Size(296, 52);
+            this.btnClearWordEditor.Size = new System.Drawing.Size(296, 50);
             this.btnClearWordEditor.TabIndex = 20;
             this.btnClearWordEditor.Text = "Clear";
             this.tips.SetToolTip(this.btnClearWordEditor, "Clear the board for a new word.");
@@ -458,10 +458,10 @@
             this.tabVocabEditor.Controls.Add(this.tbpWordEditor);
             this.tabVocabEditor.Controls.Add(this.tbpTagEditor);
             this.tabVocabEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabVocabEditor.Location = new System.Drawing.Point(0, 28);
+            this.tabVocabEditor.Location = new System.Drawing.Point(0, 30);
             this.tabVocabEditor.Name = "tabVocabEditor";
             this.tabVocabEditor.SelectedIndex = 0;
-            this.tabVocabEditor.Size = new System.Drawing.Size(1151, 745);
+            this.tabVocabEditor.Size = new System.Drawing.Size(1151, 743);
             this.tabVocabEditor.TabIndex = 21;
             this.tabVocabEditor.SelectedIndexChanged += new System.EventHandler(this.tabVocabEditor_SelectedIndexChanged);
             // 
@@ -471,7 +471,7 @@
             this.tbpWordEditor.Location = new System.Drawing.Point(4, 46);
             this.tbpWordEditor.Name = "tbpWordEditor";
             this.tbpWordEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpWordEditor.Size = new System.Drawing.Size(1143, 695);
+            this.tbpWordEditor.Size = new System.Drawing.Size(1143, 693);
             this.tbpWordEditor.TabIndex = 0;
             this.tbpWordEditor.Text = "Word Viewer";
             this.tbpWordEditor.UseVisualStyleBackColor = true;
@@ -482,7 +482,7 @@
             this.tbpTagEditor.Location = new System.Drawing.Point(4, 46);
             this.tbpTagEditor.Name = "tbpTagEditor";
             this.tbpTagEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpTagEditor.Size = new System.Drawing.Size(1143, 695);
+            this.tbpTagEditor.Size = new System.Drawing.Size(1143, 693);
             this.tbpTagEditor.TabIndex = 1;
             this.tbpTagEditor.Text = "Tag Viewer";
             this.tbpTagEditor.UseVisualStyleBackColor = true;
@@ -501,7 +501,7 @@
             // splTagEditor.Panel2
             // 
             this.splTagEditor.Panel2.Controls.Add(this.tlpTagEditorBoard);
-            this.splTagEditor.Size = new System.Drawing.Size(1137, 689);
+            this.splTagEditor.Size = new System.Drawing.Size(1137, 687);
             this.splTagEditor.SplitterDistance = 227;
             this.splTagEditor.SplitterWidth = 10;
             this.splTagEditor.TabIndex = 21;
@@ -518,13 +518,13 @@
             this.tlpTagList.RowCount = 2;
             this.tlpTagList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91F));
             this.tlpTagList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
-            this.tlpTagList.Size = new System.Drawing.Size(223, 685);
+            this.tlpTagList.Size = new System.Drawing.Size(223, 683);
             this.tlpTagList.TabIndex = 10;
             // 
             // btnDeleteTag
             // 
             this.btnDeleteTag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteTag.Location = new System.Drawing.Point(3, 626);
+            this.btnDeleteTag.Location = new System.Drawing.Point(3, 624);
             this.btnDeleteTag.Name = "btnDeleteTag";
             this.btnDeleteTag.Size = new System.Drawing.Size(217, 56);
             this.btnDeleteTag.TabIndex = 9;
@@ -541,7 +541,7 @@
             this.lstTags.ItemHeight = 31;
             this.lstTags.Location = new System.Drawing.Point(3, 3);
             this.lstTags.Name = "lstTags";
-            this.lstTags.Size = new System.Drawing.Size(217, 617);
+            this.lstTags.Size = new System.Drawing.Size(217, 615);
             this.lstTags.TabIndex = 0;
             this.lstTags.SelectedIndexChanged += new System.EventHandler(this.lstTags_SelectedIndexChanged);
             // 
@@ -561,7 +561,7 @@
             this.tlpTagEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.74453F));
             this.tlpTagEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
             this.tlpTagEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTagEditorBoard.Size = new System.Drawing.Size(896, 685);
+            this.tlpTagEditorBoard.Size = new System.Drawing.Size(896, 683);
             this.tlpTagEditorBoard.TabIndex = 21;
             // 
             // txtTagName
@@ -577,9 +577,9 @@
             // 
             this.grpTagInfo.Controls.Add(this.txtTagInfo);
             this.grpTagInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpTagInfo.Location = new System.Drawing.Point(3, 45);
+            this.grpTagInfo.Location = new System.Drawing.Point(3, 44);
             this.grpTagInfo.Name = "grpTagInfo";
-            this.grpTagInfo.Size = new System.Drawing.Size(890, 232);
+            this.grpTagInfo.Size = new System.Drawing.Size(890, 231);
             this.grpTagInfo.TabIndex = 2;
             this.grpTagInfo.TabStop = false;
             this.grpTagInfo.Text = "Tag Info";
@@ -592,7 +592,7 @@
             this.txtTagInfo.Multiline = true;
             this.txtTagInfo.Name = "txtTagInfo";
             this.txtTagInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTagInfo.Size = new System.Drawing.Size(884, 190);
+            this.txtTagInfo.Size = new System.Drawing.Size(884, 189);
             this.txtTagInfo.TabIndex = 0;
             // 
             // tlpTagCommitButtoms
@@ -605,7 +605,7 @@
             this.tlpTagCommitButtoms.Controls.Add(this.btnClearTagEditor, 1, 0);
             this.tlpTagCommitButtoms.Controls.Add(this.btnUpdateTag, 2, 0);
             this.tlpTagCommitButtoms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTagCommitButtoms.Location = new System.Drawing.Point(3, 283);
+            this.tlpTagCommitButtoms.Location = new System.Drawing.Point(3, 281);
             this.tlpTagCommitButtoms.Name = "tlpTagCommitButtoms";
             this.tlpTagCommitButtoms.RowCount = 1;
             this.tlpTagCommitButtoms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -620,7 +620,7 @@
             this.btnCreateTag.Size = new System.Drawing.Size(287, 49);
             this.btnCreateTag.TabIndex = 10;
             this.btnCreateTag.Text = "Create";
-            this.tips.SetToolTip(this.btnCreateTag, "Create a new tag. (Ctrl + Shift + Enter)");
+            this.tips.SetToolTip(this.btnCreateTag, "Create a new tag. (Ctrl + Enter)");
             this.btnCreateTag.UseVisualStyleBackColor = true;
             this.btnCreateTag.Click += new System.EventHandler(this.btnCreateTag_Click);
             // 
@@ -644,7 +644,7 @@
             this.btnUpdateTag.Size = new System.Drawing.Size(289, 49);
             this.btnUpdateTag.TabIndex = 11;
             this.btnUpdateTag.Text = "Update";
-            this.tips.SetToolTip(this.btnUpdateTag, "Update the seleted tag. (Ctrl + S");
+            this.tips.SetToolTip(this.btnUpdateTag, "Save update to the seleted tag. (Ctrl + S)");
             this.btnUpdateTag.UseVisualStyleBackColor = true;
             this.btnUpdateTag.Click += new System.EventHandler(this.btnUpdateTag_Click);
             // 
@@ -652,7 +652,7 @@
             // 
             this.grpTaggedFilter.Controls.Add(this.lstTaggedWords);
             this.grpTaggedFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpTaggedFilter.Location = new System.Drawing.Point(3, 344);
+            this.grpTaggedFilter.Location = new System.Drawing.Point(3, 342);
             this.grpTaggedFilter.Name = "grpTaggedFilter";
             this.grpTaggedFilter.Size = new System.Drawing.Size(890, 338);
             this.grpTaggedFilter.TabIndex = 13;
@@ -680,7 +680,7 @@
             this.otherToolStripMenuItem});
             this.mnsTop.Location = new System.Drawing.Point(0, 0);
             this.mnsTop.Name = "mnsTop";
-            this.mnsTop.Size = new System.Drawing.Size(1151, 28);
+            this.mnsTop.Size = new System.Drawing.Size(1151, 30);
             this.mnsTop.TabIndex = 22;
             this.mnsTop.Text = "menuStrip1";
             // 
@@ -726,8 +726,8 @@
             // autoFillToolStripMenuItem
             // 
             this.autoFillToolStripMenuItem.Name = "autoFillToolStripMenuItem";
-            this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.autoFillToolStripMenuItem.Text = "Auto Fill (Ctrl + Shift + F)";
+            this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoFillToolStripMenuItem.Text = "Auto Fill (Ctrl  + F)";
             this.autoFillToolStripMenuItem.Click += new System.EventHandler(this.autoFillToolStripMenuItem_Click);
             // 
             // autoFillAllToolStripMenuItem

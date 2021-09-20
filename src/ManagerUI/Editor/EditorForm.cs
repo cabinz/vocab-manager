@@ -740,7 +740,7 @@ namespace ManagerUI
                     {
                         StopAutoFillAll = true;
                     }
-                    else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
+                    else if (e.KeyData == (Keys.Control | Keys.Enter))
                     {
                         CreateWord();
                     }
@@ -751,7 +751,7 @@ namespace ManagerUI
                     break;
                 // case Tag Editor
                 case 1:
-                    if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
+                    if (e.KeyData == (Keys.Control | Keys.Enter))
                     {
                         CreateTag();
                     }
@@ -779,7 +779,7 @@ namespace ManagerUI
         private void txtDefinition_KeyDown(object sender, KeyEventArgs e)
         {
             // Auto Fill with Web Crawler
-            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            if(e.KeyData == (Keys.Control | Keys.F))
             {
                 if (ValidateInternetConnection())
                 {
@@ -857,7 +857,7 @@ namespace ManagerUI
 
         private void txtContext_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            if(e.KeyData == (Keys.Control | Keys.F))
             {
                 if (ValidateInternetConnection())
                 {
@@ -869,7 +869,7 @@ namespace ManagerUI
 
         private void txtWordText_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.F))
+            if (e.KeyData == (Keys.Control | Keys.F))
             {
                 AutoFill();
             }
