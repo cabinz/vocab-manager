@@ -129,6 +129,8 @@ namespace ManagerUI
         {
             bool res = true;
 
+            txtWordText.Text = txtWordText.Text.Trim();
+
             if (txtWordText.Text.Length > 50)
             {
                 MessageBox.Show("The length of word exceeds 50, " +
@@ -213,25 +215,6 @@ namespace ManagerUI
         /// </summary>
         private void CreateWord()
         {
-            //LongmanDict dict = new LongmanDict();
-            //if (String.IsNullOrEmpty(txtDefinition.Text.Trim()))
-            //{
-            //    dict = new LongmanDict(txtWordText.Text);
-            //    txtDefinition.Text = dict.DefinitionText();
-            //}
-            //if(String.IsNullOrEmpty(txtContext.Text.Trim()))
-            //{
-            //    if (String.IsNullOrEmpty(dict.FullLink))
-            //    {
-            //        dict = new LongmanDict(txtWordText.Text);
-            //    }
-            //    txtContext.Text = dict.ContextText();
-            //    if (!String.IsNullOrEmpty(txtContext.Text))
-            //    {
-            //        txtContextSource.Text = dict.FullLink;
-            //    }
-            //}
-
             if (tabVocabEditor.SelectedTab == tbpWordEditor && ValidateFormForCreateWord())
             {
                 WordModel mdl = new WordModel(
@@ -492,6 +475,8 @@ namespace ManagerUI
         private bool ValidateTagEditor()
         {
             bool res = true;
+
+            txtTagName.Text = txtTagName.Text.Trim();
 
             if (txtTagName.Text.Length > 50)
             {

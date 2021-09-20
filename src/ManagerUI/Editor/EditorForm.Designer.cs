@@ -120,7 +120,7 @@
             this.lstWords.ItemHeight = 31;
             this.lstWords.Location = new System.Drawing.Point(3, 61);
             this.lstWords.Name = "lstWords";
-            this.lstWords.Size = new System.Drawing.Size(217, 559);
+            this.lstWords.Size = new System.Drawing.Size(217, 561);
             this.lstWords.TabIndex = 0;
             this.lstWords.SelectedIndexChanged += new System.EventHandler(this.lstWords_SelectedIndexChanged);
             // 
@@ -140,7 +140,7 @@
             // 
             this.tlpWordList.SetColumnSpan(this.btnRemoveWord, 2);
             this.btnRemoveWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveWord.Location = new System.Drawing.Point(3, 626);
+            this.btnRemoveWord.Location = new System.Drawing.Point(3, 628);
             this.btnRemoveWord.Name = "btnRemoveWord";
             this.btnRemoveWord.Size = new System.Drawing.Size(217, 54);
             this.btnRemoveWord.TabIndex = 9;
@@ -154,7 +154,7 @@
             this.btnCreateWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCreateWord.Location = new System.Drawing.Point(3, 3);
             this.btnCreateWord.Name = "btnCreateWord";
-            this.btnCreateWord.Size = new System.Drawing.Size(287, 50);
+            this.btnCreateWord.Size = new System.Drawing.Size(287, 52);
             this.btnCreateWord.TabIndex = 10;
             this.btnCreateWord.Text = "Create";
             this.tips.SetToolTip(this.btnCreateWord, "Create a new word. (Ctrl + Enter)");
@@ -166,7 +166,7 @@
             this.btnUpdateWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdateWord.Location = new System.Drawing.Point(598, 3);
             this.btnUpdateWord.Name = "btnUpdateWord";
-            this.btnUpdateWord.Size = new System.Drawing.Size(289, 50);
+            this.btnUpdateWord.Size = new System.Drawing.Size(289, 52);
             this.btnUpdateWord.TabIndex = 11;
             this.btnUpdateWord.Text = "Update";
             this.tips.SetToolTip(this.btnUpdateWord, "Save update to the selected word. (Ctrl+S)");
@@ -265,7 +265,7 @@
             // splWordEditor.Panel2
             // 
             this.splWordEditor.Panel2.Controls.Add(this.tlpWordEditorBoard);
-            this.splWordEditor.Size = new System.Drawing.Size(1137, 687);
+            this.splWordEditor.Size = new System.Drawing.Size(1137, 689);
             this.splWordEditor.SplitterDistance = 227;
             this.splWordEditor.SplitterWidth = 10;
             this.splWordEditor.TabIndex = 20;
@@ -288,7 +288,7 @@
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.857143F));
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.79047F));
             this.tlpWordList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.561905F));
-            this.tlpWordList.Size = new System.Drawing.Size(223, 683);
+            this.tlpWordList.Size = new System.Drawing.Size(223, 685);
             this.tlpWordList.TabIndex = 10;
             // 
             // txtWordFilter
@@ -344,7 +344,7 @@
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.46178F));
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.46178F));
             this.tlpWordEditorBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.991908F));
-            this.tlpWordEditorBoard.Size = new System.Drawing.Size(896, 683);
+            this.tlpWordEditorBoard.Size = new System.Drawing.Size(896, 685);
             this.tlpWordEditorBoard.TabIndex = 21;
             // 
             // grpNotes
@@ -438,7 +438,7 @@
             this.tlpWordCommitButtoms.Name = "tlpWordCommitButtoms";
             this.tlpWordCommitButtoms.RowCount = 1;
             this.tlpWordCommitButtoms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpWordCommitButtoms.Size = new System.Drawing.Size(890, 56);
+            this.tlpWordCommitButtoms.Size = new System.Drawing.Size(890, 58);
             this.tlpWordCommitButtoms.TabIndex = 3;
             // 
             // btnClearWordEditor
@@ -446,7 +446,7 @@
             this.btnClearWordEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClearWordEditor.Location = new System.Drawing.Point(296, 3);
             this.btnClearWordEditor.Name = "btnClearWordEditor";
-            this.btnClearWordEditor.Size = new System.Drawing.Size(296, 50);
+            this.btnClearWordEditor.Size = new System.Drawing.Size(296, 52);
             this.btnClearWordEditor.TabIndex = 20;
             this.btnClearWordEditor.Text = "Clear";
             this.tips.SetToolTip(this.btnClearWordEditor, "Clear the board for a new word.");
@@ -458,10 +458,10 @@
             this.tabVocabEditor.Controls.Add(this.tbpWordEditor);
             this.tabVocabEditor.Controls.Add(this.tbpTagEditor);
             this.tabVocabEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabVocabEditor.Location = new System.Drawing.Point(0, 30);
+            this.tabVocabEditor.Location = new System.Drawing.Point(0, 28);
             this.tabVocabEditor.Name = "tabVocabEditor";
             this.tabVocabEditor.SelectedIndex = 0;
-            this.tabVocabEditor.Size = new System.Drawing.Size(1151, 743);
+            this.tabVocabEditor.Size = new System.Drawing.Size(1151, 745);
             this.tabVocabEditor.TabIndex = 21;
             this.tabVocabEditor.SelectedIndexChanged += new System.EventHandler(this.tabVocabEditor_SelectedIndexChanged);
             // 
@@ -471,7 +471,7 @@
             this.tbpWordEditor.Location = new System.Drawing.Point(4, 46);
             this.tbpWordEditor.Name = "tbpWordEditor";
             this.tbpWordEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpWordEditor.Size = new System.Drawing.Size(1143, 693);
+            this.tbpWordEditor.Size = new System.Drawing.Size(1143, 695);
             this.tbpWordEditor.TabIndex = 0;
             this.tbpWordEditor.Text = "Word Viewer";
             this.tbpWordEditor.UseVisualStyleBackColor = true;
@@ -680,7 +680,7 @@
             this.otherToolStripMenuItem});
             this.mnsTop.Location = new System.Drawing.Point(0, 0);
             this.mnsTop.Name = "mnsTop";
-            this.mnsTop.Size = new System.Drawing.Size(1151, 30);
+            this.mnsTop.Size = new System.Drawing.Size(1151, 28);
             this.mnsTop.TabIndex = 22;
             this.mnsTop.Text = "menuStrip1";
             // 
@@ -720,21 +720,21 @@
             this.autoFillToolStripMenuItem,
             this.autoFillAllToolStripMenuItem});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.otherToolStripMenuItem.Text = "Other";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.otherToolStripMenuItem.Text = "Auto Fill";
             // 
             // autoFillToolStripMenuItem
             // 
             this.autoFillToolStripMenuItem.Name = "autoFillToolStripMenuItem";
-            this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.autoFillToolStripMenuItem.Text = "Auto Fill (Ctrl  + F)";
+            this.autoFillToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.autoFillToolStripMenuItem.Text = "Fill / Append (Ctrl  + F)";
             this.autoFillToolStripMenuItem.Click += new System.EventHandler(this.autoFillToolStripMenuItem_Click);
             // 
             // autoFillAllToolStripMenuItem
             // 
             this.autoFillAllToolStripMenuItem.Name = "autoFillAllToolStripMenuItem";
-            this.autoFillAllToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.autoFillAllToolStripMenuItem.Text = "Auto Fill All";
+            this.autoFillAllToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.autoFillAllToolStripMenuItem.Text = "Fill All";
             this.autoFillAllToolStripMenuItem.Click += new System.EventHandler(this.autoFillAllToolStripMenuItem_Click);
             // 
             // tips

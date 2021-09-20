@@ -31,9 +31,9 @@ namespace ManagerLibrary.AutoFiller
         {
         }
 
-        public LongmanFiller(string spelling)
+        public LongmanFiller(string input_spelling)
         {
-            WordText = spelling;
+            WordText = input_spelling.Trim().Replace(" ", "-");
             Doc = Web.Load(FullLink);
         }
 
