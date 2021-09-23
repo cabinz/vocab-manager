@@ -23,7 +23,7 @@ In the future, I’m about to improve the user interface by rebuilding the GUI c
 
 # History Version
 
-## v1.x
+Version: [1.1.0](https://github.com/cabinz/vocab-manager/releases/tag/v1.1.0).
 
 Version: [1.0.0](https://github.com/cabinz/vocab-manager/releases/tag/v1.0.0).
 
