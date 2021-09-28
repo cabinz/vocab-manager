@@ -725,7 +725,7 @@ namespace ManagerUI
                     {
                         StopAutoFillAll = true;
                     }
-                    else if (e.KeyData == (Keys.Control | Keys.Enter))
+                    else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
                     {
                         CreateWord();
                     }
@@ -733,10 +733,19 @@ namespace ManagerUI
                     {
                         UpdateWord();
                     }
+                    else if (e.KeyData == (Keys.Control | Keys.N))
+                    {
+                        ClearWordEditorInput();
+                    }
+                    else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.C))
+                    {
+                        txtWordText.Text = "";
+                        txtDefinition.Text = "";
+                    }
                     break;
                 // case Tag Editor
                 case 1:
-                    if (e.KeyData == (Keys.Control | Keys.Enter))
+                    if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Enter))
                     {
                         CreateTag();
                     }
@@ -744,7 +753,11 @@ namespace ManagerUI
                     {
                         UpdateTag();
                     }
-                break;
+                    else if (e.KeyData == (Keys.Control | Keys.N))
+                    {
+                        ClearTagEditorInput();
+                    }
+                    break;
             }
             
         }

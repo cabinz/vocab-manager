@@ -39,22 +39,23 @@
             this.txtContext = new System.Windows.Forms.TextBox();
             this.grpDefinition = new System.Windows.Forms.GroupBox();
             this.txtDefinition = new System.Windows.Forms.TextBox();
+            this.tlpMetricBar = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMetricInfo = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.prgQuiz = new System.Windows.Forms.ProgressBar();
             this.mnsTop = new System.Windows.Forms.MenuStrip();
             this.tsmiTool = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadByTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGenReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.tlpMetricBar = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMetricInfo = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.tlpQuizForm.SuspendLayout();
             this.tlpDetailBoard.SuspendLayout();
             this.grpNote.SuspendLayout();
             this.grpContext.SuspendLayout();
             this.grpDefinition.SuspendLayout();
-            this.mnsTop.SuspendLayout();
             this.tlpMetricBar.SuspendLayout();
+            this.mnsTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWordText
@@ -63,7 +64,7 @@
             this.lblWordText.AutoSize = true;
             this.tlpQuizForm.SetColumnSpan(this.lblWordText, 2);
             this.lblWordText.Font = new System.Drawing.Font("Sitka Display", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWordText.Location = new System.Drawing.Point(352, 10);
+            this.lblWordText.Location = new System.Drawing.Point(352, 37);
             this.lblWordText.Name = "lblWordText";
             this.lblWordText.Size = new System.Drawing.Size(488, 62);
             this.lblWordText.TabIndex = 1;
@@ -74,9 +75,9 @@
             // 
             this.btnRemember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemember.Enabled = false;
-            this.btnRemember.Location = new System.Drawing.Point(3, 483);
+            this.btnRemember.Location = new System.Drawing.Point(3, 488);
             this.btnRemember.Name = "btnRemember";
-            this.btnRemember.Size = new System.Drawing.Size(590, 101);
+            this.btnRemember.Size = new System.Drawing.Size(590, 96);
             this.btnRemember.TabIndex = 3;
             this.btnRemember.Text = "Remember";
             this.btnRemember.UseVisualStyleBackColor = true;
@@ -86,9 +87,9 @@
             // 
             this.btnForget.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnForget.Enabled = false;
-            this.btnForget.Location = new System.Drawing.Point(599, 483);
+            this.btnForget.Location = new System.Drawing.Point(599, 488);
             this.btnForget.Name = "btnForget";
-            this.btnForget.Size = new System.Drawing.Size(590, 101);
+            this.btnForget.Size = new System.Drawing.Size(590, 96);
             this.btnForget.TabIndex = 4;
             this.btnForget.Text = "Forget";
             this.btnForget.UseVisualStyleBackColor = true;
@@ -99,15 +100,17 @@
             this.tlpQuizForm.ColumnCount = 2;
             this.tlpQuizForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpQuizForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpQuizForm.Controls.Add(this.lblWordText, 0, 0);
-            this.tlpQuizForm.Controls.Add(this.btnRemember, 0, 3);
-            this.tlpQuizForm.Controls.Add(this.btnForget, 1, 3);
-            this.tlpQuizForm.Controls.Add(this.tlpDetailBoard, 0, 2);
-            this.tlpQuizForm.Controls.Add(this.tlpMetricBar, 0, 1);
+            this.tlpQuizForm.Controls.Add(this.lblWordText, 0, 1);
+            this.tlpQuizForm.Controls.Add(this.btnRemember, 0, 4);
+            this.tlpQuizForm.Controls.Add(this.btnForget, 1, 4);
+            this.tlpQuizForm.Controls.Add(this.tlpDetailBoard, 0, 3);
+            this.tlpQuizForm.Controls.Add(this.tlpMetricBar, 0, 2);
+            this.tlpQuizForm.Controls.Add(this.prgQuiz, 0, 0);
             this.tlpQuizForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpQuizForm.Location = new System.Drawing.Point(0, 28);
             this.tlpQuizForm.Name = "tlpQuizForm";
-            this.tlpQuizForm.RowCount = 4;
+            this.tlpQuizForm.RowCount = 5;
+            this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
             this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tlpQuizForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -126,11 +129,11 @@
             this.tlpDetailBoard.Controls.Add(this.grpContext, 1, 0);
             this.tlpDetailBoard.Controls.Add(this.grpDefinition, 0, 0);
             this.tlpDetailBoard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDetailBoard.Location = new System.Drawing.Point(3, 131);
+            this.tlpDetailBoard.Location = new System.Drawing.Point(3, 154);
             this.tlpDetailBoard.Name = "tlpDetailBoard";
             this.tlpDetailBoard.RowCount = 1;
             this.tlpDetailBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDetailBoard.Size = new System.Drawing.Size(1186, 346);
+            this.tlpDetailBoard.Size = new System.Drawing.Size(1186, 328);
             this.tlpDetailBoard.TabIndex = 5;
             // 
             // grpNote
@@ -141,7 +144,7 @@
             this.grpNote.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpNote.Location = new System.Drawing.Point(797, 3);
             this.grpNote.Name = "grpNote";
-            this.grpNote.Size = new System.Drawing.Size(386, 340);
+            this.grpNote.Size = new System.Drawing.Size(386, 322);
             this.grpNote.TabIndex = 2;
             this.grpNote.TabStop = false;
             this.grpNote.Text = "Note";
@@ -156,7 +159,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.ReadOnly = true;
-            this.txtNote.Size = new System.Drawing.Size(380, 298);
+            this.txtNote.Size = new System.Drawing.Size(380, 280);
             this.txtNote.TabIndex = 1;
             // 
             // grpContext
@@ -167,7 +170,7 @@
             this.grpContext.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpContext.Location = new System.Drawing.Point(394, 3);
             this.grpContext.Name = "grpContext";
-            this.grpContext.Size = new System.Drawing.Size(397, 340);
+            this.grpContext.Size = new System.Drawing.Size(397, 322);
             this.grpContext.TabIndex = 1;
             this.grpContext.TabStop = false;
             this.grpContext.Text = "Context";
@@ -182,7 +185,7 @@
             this.txtContext.Multiline = true;
             this.txtContext.Name = "txtContext";
             this.txtContext.ReadOnly = true;
-            this.txtContext.Size = new System.Drawing.Size(391, 298);
+            this.txtContext.Size = new System.Drawing.Size(391, 280);
             this.txtContext.TabIndex = 1;
             // 
             // grpDefinition
@@ -193,7 +196,7 @@
             this.grpDefinition.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.grpDefinition.Location = new System.Drawing.Point(3, 3);
             this.grpDefinition.Name = "grpDefinition";
-            this.grpDefinition.Size = new System.Drawing.Size(385, 340);
+            this.grpDefinition.Size = new System.Drawing.Size(385, 322);
             this.grpDefinition.TabIndex = 0;
             this.grpDefinition.TabStop = false;
             this.grpDefinition.Text = "Definition";
@@ -209,8 +212,58 @@
             this.txtDefinition.Multiline = true;
             this.txtDefinition.Name = "txtDefinition";
             this.txtDefinition.ReadOnly = true;
-            this.txtDefinition.Size = new System.Drawing.Size(379, 298);
+            this.txtDefinition.Size = new System.Drawing.Size(379, 280);
             this.txtDefinition.TabIndex = 0;
+            // 
+            // tlpMetricBar
+            // 
+            this.tlpMetricBar.BackColor = System.Drawing.SystemColors.Window;
+            this.tlpMetricBar.ColumnCount = 2;
+            this.tlpQuizForm.SetColumnSpan(this.tlpMetricBar, 2);
+            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.25632F));
+            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.74368F));
+            this.tlpMetricBar.Controls.Add(this.lblMetricInfo, 0, 0);
+            this.tlpMetricBar.Controls.Add(this.btnRemove, 1, 0);
+            this.tlpMetricBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMetricBar.Location = new System.Drawing.Point(3, 110);
+            this.tlpMetricBar.Name = "tlpMetricBar";
+            this.tlpMetricBar.RowCount = 1;
+            this.tlpMetricBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMetricBar.Size = new System.Drawing.Size(1186, 38);
+            this.tlpMetricBar.TabIndex = 6;
+            // 
+            // lblMetricInfo
+            // 
+            this.lblMetricInfo.AutoSize = true;
+            this.lblMetricInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMetricInfo.Location = new System.Drawing.Point(3, 0);
+            this.lblMetricInfo.Name = "lblMetricInfo";
+            this.lblMetricInfo.Size = new System.Drawing.Size(1016, 38);
+            this.lblMetricInfo.TabIndex = 0;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemove.Enabled = false;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btnRemove.Location = new System.Drawing.Point(1025, 3);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(158, 32);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // prgQuiz
+            // 
+            this.tlpQuizForm.SetColumnSpan(this.prgQuiz, 2);
+            this.prgQuiz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prgQuiz.Enabled = false;
+            this.prgQuiz.Location = new System.Drawing.Point(3, 3);
+            this.prgQuiz.Name = "prgQuiz";
+            this.prgQuiz.Size = new System.Drawing.Size(1186, 24);
+            this.prgQuiz.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prgQuiz.TabIndex = 7;
             // 
             // mnsTop
             // 
@@ -236,14 +289,14 @@
             // loadAllToolStripMenuItem
             // 
             this.loadAllToolStripMenuItem.Name = "loadAllToolStripMenuItem";
-            this.loadAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadAllToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.loadAllToolStripMenuItem.Text = "load all";
             this.loadAllToolStripMenuItem.Click += new System.EventHandler(this.loadAllToolStripMenuItem_Click);
             // 
             // loadByTagsToolStripMenuItem
             // 
             this.loadByTagsToolStripMenuItem.Name = "loadByTagsToolStripMenuItem";
-            this.loadByTagsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadByTagsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.loadByTagsToolStripMenuItem.Text = "load by tags";
             this.loadByTagsToolStripMenuItem.Click += new System.EventHandler(this.loadByTagsToolStripMenuItem_Click);
             // 
@@ -261,45 +314,6 @@
             this.tsmiGenReport.Size = new System.Drawing.Size(251, 26);
             this.tsmiGenReport.Text = "generate report (.md)";
             this.tsmiGenReport.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
-            // 
-            // tlpMetricBar
-            // 
-            this.tlpMetricBar.BackColor = System.Drawing.SystemColors.Window;
-            this.tlpMetricBar.ColumnCount = 2;
-            this.tlpQuizForm.SetColumnSpan(this.tlpMetricBar, 2);
-            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.25632F));
-            this.tlpMetricBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.74368F));
-            this.tlpMetricBar.Controls.Add(this.lblMetricInfo, 0, 0);
-            this.tlpMetricBar.Controls.Add(this.btnRemove, 1, 0);
-            this.tlpMetricBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMetricBar.Location = new System.Drawing.Point(3, 85);
-            this.tlpMetricBar.Name = "tlpMetricBar";
-            this.tlpMetricBar.RowCount = 1;
-            this.tlpMetricBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMetricBar.Size = new System.Drawing.Size(1186, 40);
-            this.tlpMetricBar.TabIndex = 6;
-            // 
-            // lblMetricInfo
-            // 
-            this.lblMetricInfo.AutoSize = true;
-            this.lblMetricInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMetricInfo.Location = new System.Drawing.Point(3, 0);
-            this.lblMetricInfo.Name = "lblMetricInfo";
-            this.lblMetricInfo.Size = new System.Drawing.Size(1017, 40);
-            this.lblMetricInfo.TabIndex = 0;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnRemove.Location = new System.Drawing.Point(1026, 3);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(157, 34);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // QuizForm
             // 
@@ -324,10 +338,10 @@
             this.grpContext.PerformLayout();
             this.grpDefinition.ResumeLayout(false);
             this.grpDefinition.PerformLayout();
-            this.mnsTop.ResumeLayout(false);
-            this.mnsTop.PerformLayout();
             this.tlpMetricBar.ResumeLayout(false);
             this.tlpMetricBar.PerformLayout();
+            this.mnsTop.ResumeLayout(false);
+            this.mnsTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +368,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpMetricBar;
         private System.Windows.Forms.Label lblMetricInfo;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.ProgressBar prgQuiz;
     }
 }
