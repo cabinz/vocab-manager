@@ -102,11 +102,13 @@ namespace ManagerUI
                 CurWord = GlobalConfig.Connection.GetWordById(Quiz[CurPos].WordID);
                 lblWordText.Text = CurWord.WordText;
                 lblMetricInfo.Text = Quiz[CurPos].ToString();
+                prgQuiz.Value = CurPos;
             }
             else
             {
+                prgQuiz.Value = CurPos;
                 lblWordText.Text = "No more records";
-                FreezeButtons();
+                DeactivateBoard();
             }
         }
 
@@ -218,6 +220,17 @@ namespace ManagerUI
             txtContext.Text = "";
             txtDefinition.Text = "";
             txtNote.Text = "";
+
+            CurPos = -1;
+            prgQuiz.Enabled = true;
+            prgQuiz.Minimum = prgQuiz.Value = 0;
+            prgQuiz.Maximum = Quiz.Count;
+        }
+
+        private void DeactivateBoard()
+        {
+            FreezeButtons();
+            prgQuiz.Enabled = false;
         }
 
         private void FreezeButtons()
